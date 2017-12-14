@@ -1,0 +1,43 @@
+
+<div *ngIf="employee">
+
+  <div *ngIf="isEmployeeDeletedSuccessfully"><span>Employee with id: </span>{{employee.id}} deleted successfully</div>
+  <div *ngIf="isEmployeeUpdatedSuccessfully && !isEmployeeDeletedSuccessfully"><span>Employee with id: </span>{{employee.id}} updated successfully</div>
+  <div class="col-md-2 content" *ngIf="!isEmployeeDeletedSuccessfully" >
+  <form class="form-horizontal" >
+  
+	<div class="form-group ">
+		<label class="control-label" >Employee Id:</label>
+			<div class="controls">
+				<input type="text" class="form-control"  placeholder="id" [(ngModel)]="employee.id" name="id" disabled="true"/>
+			</div>
+	</div>
+	<div class="form-group ">
+		<label class="control-label" >Employee Name:</label>
+			<div class="controls">
+				<input type="text" class="form-control"  placeholder="name" [(ngModel)]="employee.name" name="name"/>
+			</div>
+	</div>
+	<div class="form-group ">
+		<label class="control-label" >Employee Address:</label>
+			<div class="controls">
+				<input type="text" class="form-control"  placeholder="address" [(ngModel)]="employee.address"  name="address"/>
+			</div>
+	</div>
+	<div class="form-group ">
+		<label class="control-label" >Employee Designation:</label>
+			<div class="controls">
+				<input type="text" class="form-control"  placeholder="designation" [(ngModel)]="employee.designation" name="designation"/>
+			</div>
+	</div>
+	
+	<div class="form-group">
+		<div class="controls">
+			<input class="btn btn-primary" type="button"  (click)="updateEmployee(employee)" value="Update"/>
+			<input class="btn btn-primary" type="button"  (click)="deleteEmployee(employee.id)" value="Delete"/> 
+		</div>
+	</div>	
+	</form >
+  </div>
+
+</div>

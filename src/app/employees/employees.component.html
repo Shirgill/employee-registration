@@ -1,0 +1,22 @@
+
+
+<h4> Organization Employees</h4>
+<hr/>
+<div class="col-xs-3 callout">
+<ul class="list-group" >
+  <li class="list-group-item" *ngFor="let employee of employees" (click)="onSelect(employee)"  routerLink="/employee/{{employee.id}}" 
+		[class.selected]="employee === selectedEmployee ? active : ''" >
+    <span class="badge">{{employee.id}}</span> {{employee.name}}
+  </li>
+</ul>
+</div>
+
+<div class="form-group">
+	<div class="controls">
+		<input class="btn btn-primary" type="button" routerLink="/createEmployee" value="Add Employee"/>		
+	</div>
+</div>
+
+
+
+
